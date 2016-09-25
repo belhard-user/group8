@@ -56,6 +56,6 @@ class Foo
 }
 
 ( new Foo )
-    ->foo()
+    ->foo2()
     ->bar()
     ->jaz();
