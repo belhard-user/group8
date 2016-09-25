@@ -55,10 +55,6 @@ class Foo
 
 }
 
-echo Foo::class;
-
-
-
 ( new Foo )
     ->foo()
     ->foo()
