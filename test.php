@@ -63,4 +63,6 @@ echo Foo::class;
     ->foo()
     ->foo()
     ->bar()
+    ->jaz()
+    ->bar()
     ->jaz();
