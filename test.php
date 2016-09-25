@@ -58,4 +58,4 @@ class Foo
 ( new Foo )
     ->foo()
     ->bar()
-    ->jaz()
+    ->jaz();
