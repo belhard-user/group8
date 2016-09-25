@@ -52,7 +52,7 @@ class Foo
         return $this;
     }
 
-    
+
 }
 
 echo Foo::class;
@@ -60,6 +60,7 @@ echo Foo::class;
 
 
 ( new Foo )
+    ->foo()
     ->foo()
     ->bar()
     ->jaz();
