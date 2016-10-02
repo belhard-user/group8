@@ -1,5 +1,9 @@
 <?php
 
+namespace Core\Database;
+
+use mysqli;
+
 class Connector
 {
     public static function create($config)

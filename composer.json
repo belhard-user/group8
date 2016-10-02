@@ -1,0 +1,14 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Core\\": "core"
+    },
+    "files": [
+      "core/helper.php"
+    ]
+  },
+  "require": {
+    "milon/barcode": "^5.2",
+    "wemersonjanuario/pdf": "^1.0"
+  }
+}
