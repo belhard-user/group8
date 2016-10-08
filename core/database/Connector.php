@@ -2,17 +2,17 @@
 
 namespace Core\Database;
 
-use mysqli;
+use PDO;
 
 class Connector
 {
     public static function create($config)
     {
-        return new mysqli(
-            $config['host'],
+        return new PDO(
+            'mysql:host=' . $config['host'] . ';dbname=' . $config['name'],
             $config['user'],
             $config['pwd'],
-            $config['name']
+            $config['options']
         );
     }
 }
