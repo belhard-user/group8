@@ -6,7 +6,7 @@ class PageController
 {
     public function index()
     {
-        die('test test test');
+        die('asdasdasd');
     }
 
     public function table()

@@ -1,28 +1,35 @@
-<pre><?php
+<?php
+
+$arr = [
+    'name' => 'John',
+    'age' => '23',
+    'role' => 'admin'
+];
+
+echo http_build_query($arr);
+
 
 
 //INSERT INTO tbl_name (task, complete) VALUE ('title', 1)
 
-try {
+/*try {
     $pdo = new PDO("mysql:host=localhost;dbname=proba", 'root', '');
-    // $pdo = new PDO("sqlite:proba.sqlite");
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "SELECT * FROM comment WHERE image_id=3";
+    $id = 1;
 
-    $records = $pdo->query($sql);
+    $sql = 'SELECT * FROM instagram WHERE id = :id and email = :email';
 
-    // print_r($records->fetchAll(PDO::FETCH_OBJ)); die;
+    $stmt = $pdo->prepare($sql);
+
+    $stmt->execute([
+        'email' => 'front_mib@mail.ru',
+        'id' => $id
+    ]);
+
+    print_r($stmt->fetchAll(PDO::FETCH_ASSOC));
 
 
-    print_r($records->fetch(PDO::FETCH_LAZY));
-
-//    $sql = "DELETE FROM comment WHERE id=12";
-//
-//    $cnt = $pdo->exec($sql);
-//
-//    echo $cnt;
 
 }catch (PDOException $e){
     echo $e->getMessage();
-}
+}*/
