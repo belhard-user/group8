@@ -35,10 +35,10 @@ class TaskController
                 'complete' => 1,
             ], $_POST['task_ids']);
         }elseif($whatToDo == 'delete'){
-            $sql = 'DELETE FROM task WHERE';
-            $app['database']->exec($sql);
+            $sql = "DELETE FROM task WHERE id IN(".implode(', ', $ids).")";
+            $app['database']->deleteTasks($sql);
         }
 
-        return header('Location: http://shop/task-list');
+        return header('Location: /task-list');
     }
 }

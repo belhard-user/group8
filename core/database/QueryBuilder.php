@@ -50,7 +50,7 @@ class QueryBuilder
         
         
         $sql = sprintf(
-            "UPDATE %s SET %s WHERE id IN(%s)", // UPDATE task SET complete = :complete, email=:email WHERE id IN (1, 2, 3)
+            "UPDATE %s SET %s WHERE id IN(%s)", 
             $table,
             implode(', ', $setters),
             implode(', ', $where)
@@ -59,5 +59,10 @@ class QueryBuilder
         $stmt = $this->db->prepare($sql);
 
         return $stmt->execute($params);
+    }
+
+    public function deleteTasks($sql)
+    {
+        $this->db->exec($sql); // DELETE FROM task WHERE id IN(1, 2, 6, 8)
     }
 }
