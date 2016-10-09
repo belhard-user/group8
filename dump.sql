@@ -9,7 +9,23 @@
 /*!40101 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
--- Дамп данных таблицы proba.comment: ~10 rows (приблизительно)
+
+-- Дамп структуры базы данных proba
+DROP DATABASE IF EXISTS `proba`;
+CREATE DATABASE IF NOT EXISTS `proba` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `proba`;
+
+
+-- Дамп структуры для таблица proba.comment
+DROP TABLE IF EXISTS `comment`;
+CREATE TABLE IF NOT EXISTS `comment` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `image_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `txt` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+
+-- Дамп данных таблицы proba.comment: ~15 rows (приблизительно)
 DELETE FROM `comment`;
 /*!40000 ALTER TABLE `comment` DISABLE KEYS */;
 INSERT INTO `comment` (`id`, `image_id`, `txt`) VALUES
@@ -22,8 +38,24 @@ INSERT INTO `comment` (`id`, `image_id`, `txt`) VALUES
 	(7, 3, 'asa'),
 	(8, 4, 'asdasd'),
 	(9, 4, 'asdasd'),
-	(10, 4, 'asdasd');
+	(10, 4, 'asdasd'),
+	(11, 3, 'Привет валет'),
+	(13, 3, 'Привет валет2'),
+	(14, 3, 'Привет валет22'),
+	(15, 3, 'Привет валет3'),
+	(16, 3, 'Привет валет4');
 /*!40000 ALTER TABLE `comment` ENABLE KEYS */;
+
+
+-- Дамп структуры для таблица proba.instagram
+DROP TABLE IF EXISTS `instagram`;
+CREATE TABLE IF NOT EXISTS `instagram` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL DEFAULT '0',
+  `msg` varchar(255) NOT NULL DEFAULT '0',
+  `path` varchar(140) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы proba.instagram: ~4 rows (приблизительно)
 DELETE FROM `instagram`;
@@ -34,6 +66,29 @@ INSERT INTO `instagram` (`id`, `email`, `msg`, `path`) VALUES
 	(3, 'a@a.com', 'Hello', 'instagram/57de7bf8d4e28_Desert.jpg'),
 	(4, 'asdasdasda', 'asdasdasdasd', 'instagram/57e7c73189ad5_Jellyfish.jpg');
 /*!40000 ALTER TABLE `instagram` ENABLE KEYS */;
+
+
+-- Дамп структуры для таблица proba.task
+DROP TABLE IF EXISTS `task`;
+CREATE TABLE IF NOT EXISTS `task` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `complete` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+-- Дамп данных таблицы proba.task: ~6 rows (приблизительно)
+DELETE FROM `task`;
+/*!40000 ALTER TABLE `task` DISABLE KEYS */;
+INSERT INTO `task` (`id`, `title`, `complete`) VALUES
+	(1, 'Task name', 1),
+	(2, 'Task name2', 1),
+	(3, 'One', 0),
+	(4, 'Two', 1),
+	(5, 'three', 0),
+	(6, 'test', 1),
+	(7, 'asdas', 1);
+/*!40000 ALTER TABLE `task` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
